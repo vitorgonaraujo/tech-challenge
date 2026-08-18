@@ -1,0 +1,12 @@
+{
+    "identificador": "vitorgonaraujo",
+    "nome": "Vitor Araujo",
+    "email": "vitorg51411@gmail.com",
+    "imagem_api": "vitorg14/desafio-4tech-api:1.0.0",
+    "imagem_web": "vitorg14/desafio-4tech-web:1.0.0",
+    "stack": [
+        "dotnet-10",
+        "postgres-17",
+        "angular-20"
+    ]
+}
