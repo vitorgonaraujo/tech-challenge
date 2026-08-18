@@ -1,0 +1,169 @@
+.cartao {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cabecalho h2 {
+  margin: 0;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.filtros label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 180px;
+}
+
+select,
+input {
+  padding: 8px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font: inherit;
+}
+
+button {
+  padding: 7px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+  background: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+}
+
+button:hover:not(:disabled) {
+  background: #f3f4f6;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: left;
+  vertical-align: middle;
+}
+
+th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+.acoes {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.botao-acao {
+  padding: 5px 9px;
+  min-width: 56px;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.botao-acao:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #bdbdbd;
+}
+
+.botao-acao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.aviso {
+  padding: 16px;
+  margin: 16px 0;
+  background: #f7f7f7;
+  border-radius: 4px;
+}
+
+.erro {
+  border: 1px solid #d9534f;
+  background: #fff5f5;
+}
+
+.paginacao {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.paginacao-controles,
+.paginacao-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.paginacao-info label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 768px) {
+  .cartao {
+    padding: 16px;
+  }
+
+  .cabecalho,
+  .paginacao {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .filtros {
+    flex-direction: column;
+  }
+
+  .filtros label {
+    width: 100%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .acoes {
+    min-width: 128px;
+  }
+}

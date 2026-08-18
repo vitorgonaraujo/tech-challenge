@@ -1,0 +1,83 @@
+<section class="cartao">
+  <h2>
+    {{ beneficiario ? 'Editar beneficiário' : 'Cadastrar beneficiário' }}
+  </h2>
+
+  <form (submit)="salvar(); $event.preventDefault()">
+    @if (beneficiario) {
+      <label>
+        Situação
+        <select [value]="status" (change)="status = $any($event.target).value">
+          <option value="ATIVO">Ativo</option>
+          <option value="INATIVO">Inativo</option>
+        </select>
+      </label>
+    }
+    <label>
+      Nome completo
+      <input
+        type="text"
+        name="nomeCompleto"
+        [value]="nomeCompleto"
+        (input)="nomeCompleto = $any($event.target).value"
+        maxlength="120"
+        [disabled]="beneficiario?.status === 'INATIVO'"
+      />
+    </label>
+
+    <label>
+      CPF
+      <input
+        type="text"
+        name="cpf"
+        [value]="cpf"
+        (input)="cpf = $any($event.target).value"
+        maxlength="11"
+        inputmode="numeric"
+        [disabled]="beneficiario !== null"
+      />
+    </label>
+
+    <label>
+      Data de nascimento
+      <input
+        type="date"
+        name="dataNascimento"
+        [value]="dataNascimento"
+        (input)="dataNascimento = $any($event.target).value"
+        [disabled]="beneficiario?.status === 'INATIVO'"
+      />
+    </label>
+
+    <label>
+      Plano
+      <select
+        name="planoId"
+        [value]="planoId"
+        (change)="planoId = $any($event.target).value"
+        [disabled]="beneficiario?.status === 'INATIVO'"
+      >
+        <option value="">Selecione</option>
+
+        @for (plano of planos; track plano.id) {
+          <option [value]="plano.id">
+            {{ plano.nome }}
+          </option>
+        }
+      </select>
+    </label>
+
+    @if (erro()) {
+      <p class="aviso erro">
+        {{ erro() }}
+      </p>
+    }
+
+    <button type="submit" [disabled]="salvando()">
+      {{ salvando() ? 'Salvando...' : beneficiario ? 'Salvar alterações' : 'Cadastrar' }}
+    </button>
+    @if (beneficiario) {
+      <button type="button" (click)="cancelado.emit()" [disabled]="salvando()">Cancelar</button>
+    }
+  </form>
+</section>

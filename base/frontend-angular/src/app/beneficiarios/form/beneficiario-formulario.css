@@ -1,0 +1,77 @@
+.cartao {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+input,
+select {
+  padding: 8px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font: inherit;
+}
+
+input:disabled,
+select:disabled {
+  background: #eeeeee;
+  cursor: not-allowed;
+}
+
+button {
+  width: fit-content;
+  padding: 9px 16px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background: #f7f7f7;
+  cursor: pointer;
+  font: inherit;
+}
+
+button:hover:not(:disabled) {
+  background: #eeeeee;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.aviso {
+  grid-column: 1 / -1;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.erro {
+  border: 1px solid #d9534f;
+  background: #fff5f5;
+}
+
+@media (max-width: 700px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  .cartao {
+    padding: 16px;
+  }
+}
